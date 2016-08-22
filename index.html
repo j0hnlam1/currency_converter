@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body ng-app="myapp">
+	<div class="container">	
+		<div ng-controller="CurrencyConverter">
+			<h3>Base: USD</h3>
+				<table class='table'>
+					<thead>
+						<tr>
+							<td>Currency</td>
+							<td>Code</td>
+							<td>Rate</td>
+							<td>Total</td>
+						</tr>
+					</thead>
+					<tr>
+						<td>
+							{{from.option.name}}
+						</td>
+						<td>
+							{{from.option.code}}
+						</td>
+						<td>
+							{{from.option.rate}}
+						</td>
+						<td>
+							<input type='number' class='form-control' ng-model='from.amount' ng-focus='change(1)'>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<select name='currencySelect' ng-model='to.option' ng-options='c.name for c in currencies' class='form-control' ng-focus='change(1)'>
+			        		</select>					
+			        	</td>
+						<td>
+							{{to.option.code}}
+						</td>
+						<td>
+							{{to.option.rate}}
+						</td>
+						<td>
+							<input type='number' placeholder='{{to.option.code}}' class='form-control' ng-model='to.amount' ng-focus='change(0)'>
+						</td>
+					</tr>
+				</table>
+
+		</div>
+	</div>
+</body>
+</html>
